@@ -9,13 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hi, Hello, world!")
+        NavigationStack {
+            List {
+                ForEach(0..<10, id:\.self) { index in
+                    Text("New Cell \(index+1)")
+                        .frame(height: 50)
+                }
+            }
+            .listStyle(.plain)
+            .navigationTitle("Demo List")
         }
-        .padding()
     }
 }
 
